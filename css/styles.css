@@ -200,7 +200,7 @@ footer {
   }
   .TrillLogo {
     height: 200px;
-    width: 260px;
+    width: 170px;
     float: right;
     left: 0%;
   }
@@ -482,23 +482,3 @@ ul.navbar-nav {
    color: rgb(23, 184, 111);
    text-shadow: -4px 3px 8px rgba(150, 150, 150, 1);
 }
-
-// carousel
-#myCarousel {
-  margin-top: 40px;
-
-}
-
-.carousel-linked-nav,
-.item img {
-  display: block; 
-  margin: 0 auto;
-
-}
-
-.carousel-linked-nav {
-  width: 120px;
-  margin-bottom: 20px;
-
-}
-
