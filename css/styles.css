@@ -487,8 +487,16 @@ ul.navbar-nav {
 }
 .feature h3 {
   color:  rgb(23,184, 111);
+  height: 50px;
 }
 .card-block p {
   font-size: 14px;
   color: #fff
+}
+.card-block div {
+   display: -webkit-box;
+}
+.card-block div i {
+  padding-right: 10px;
+  color: rgb(23, 184, 111);
 }
