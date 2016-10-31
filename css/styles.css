@@ -463,6 +463,8 @@ img::-moz-selection {
   background: 0
 }
 video.faded {
+  -webkit-filter:blur(5px);
+  filter:blur(5px);
   opacity: .75;
 }
 .logo-title {
