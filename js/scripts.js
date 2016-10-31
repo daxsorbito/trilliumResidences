@@ -1,5 +1,6 @@
 ! function(t) {
     "use strict";
+    new WOW().init()
     t("body").scrollspy({
         target: ".navbar-fixed-top",
         offset: 60

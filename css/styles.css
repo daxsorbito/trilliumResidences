@@ -479,9 +479,16 @@ ul.navbar-nav {
   clear: both;
 }
 .banner-title>h1{
-   color: rgb(23, 184, 111);
-   text-shadow: -4px 3px 8px rgba(150, 150, 150, 1);
+  color: rgb(23, 184, 111);
+  text-shadow: -4px 3px 8px rgba(150, 150, 150, 1);
 }
 .carousel-inner img {
   width: 100%;
+}
+.feature h3 {
+  color:  rgb(23,184, 111);
+}
+.card-block p {
+  font-size: 14px;
+  color: #fff
 }
