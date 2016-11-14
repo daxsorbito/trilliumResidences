@@ -1,0 +1,2 @@
+# trilliumResidences
+## Ficticious static site
