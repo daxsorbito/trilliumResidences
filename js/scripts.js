@@ -1,21 +1,16 @@
 ! function(t) {
-    "use strict";
-    new WOW().init()
-    t("body").scrollspy({
-        target: ".navbar-fixed-top",
-        offset: 60
-    }), t("#topNav").affix({
-        offset: {
-            top: 200
-        }
-    }), (new WOW).init(), t("a.page-scroll").bind("click", function(a) {
-        var e = t(this);
-        t("html, body").stop().animate({
-            scrollTop: t(e.attr("href")).offset().top - 60
-        }, 1450, "easeInOutExpo"), a.preventDefault()
-    }), t(".navbar-collapse ul li a").click(function() {
-        t(".navbar-toggle:visible").click()
-    }), t("#galleryModal").on("show.bs.modal", function(a) {
-        t("#galleryImage").attr("src", t(a.relatedTarget).data("src"))
-    })
+  "use strict";
+
+  var controller = new ScrollMagic.Controller();
+
+  var logoTween = TweenMax.fromTo(".logo-container", 1,
+                          {color: "#FFF"},
+                          {color: "rgb(23, 184, 111)"}
+                         );
+
+  var scene = new ScrollMagic.Scene({triggerElement: "#one", duration: 200, offset: -50})
+                  .setTween(logoTween)
+                  .addIndicators({name: "first section"})
+                  .addTo(controller)
+
 }(jQuery);
