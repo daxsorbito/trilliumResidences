@@ -20,10 +20,10 @@
 
   const setMenuTweens = () => {
     ["one", "two", "three", "four", "last"].forEach( (item, index) => {
-      const scene = {triggerElement: `#${item}`, duration: 500, offset: 0}
-      setSceneTween(TweenMax.to(`#${item}  h2.text-primary`, 1, {color:"orange"}), scene);
-      setSceneTween(setiActiveMenuTween(index+1), scene);
-      setSceneTween(TweenMax.from(`#${item}`, 1, {backgroundColor:"black"}), scene);
+      const scene = {triggerElement: `#${item}`, duration: "100%"}
+      setSceneTween(TweenMax.to(`#${item}  h2.text-primary`, 1, {color:"orange"}), scene, `menu-${item}`);
+      setSceneTween(setiActiveMenuTween(index+1), scene, `menu-${item}`);
+      setSceneTween(TweenMax.from(`#${item}`, 1, {backgroundColor:"black"}), scene, `menu-${item}`);
     })
   }
   // for div one trigger
