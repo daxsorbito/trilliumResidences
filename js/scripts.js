@@ -9,20 +9,21 @@
     .addTo(controller)
   }
 
-  const setiActiveMenuTween = (activeIndex) => {
+  const setActiveMenuTween = (activeIndex, activeColor) => {
     return TweenMax.to(`#menu li:nth-child(${activeIndex}) > a`, 1,
                                 {
-                                  color:"orange",
+                                  color: activeColor,
                                   onStart: () => {
                                     TweenMax.to("#menu li > a", 0, {color:"white"})
                                   }})
   }
 
   const setMenuTweens = () => {
+    const highlightColor = "#ff4500";
     ["one", "two", "three", "four", "last"].forEach( (item, index) => {
-      const scene = {triggerElement: `#${item}`, duration: "100%"}
-      setSceneTween(TweenMax.to(`#${item}  h2.text-primary`, 1, {color:"orange"}), scene, `menu-${item}`);
-      setSceneTween(setiActiveMenuTween(index+1), scene, `menu-${item}`);
+      const scene = {triggerElement: `#${item}`, duration: "300px"}
+      setSceneTween(TweenMax.to(`#${item}  h2.text-primary`, 1, {color: highlightColor}), scene, `menu-${item}`);
+      setSceneTween(setActiveMenuTween(index+1, highlightColor), scene, `menu-${item}`);
       setSceneTween(TweenMax.from(`#${item}`, 1, {backgroundColor:"black"}), scene, `menu-${item}`);
     })
   }

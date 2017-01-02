@@ -502,3 +502,9 @@ ul.navbar-nav {
   padding-right: 10px;
   color: rgb(23, 184, 111);
 }
+#one .container:nth-child(3) .row {
+  padding-top: 20px;
+}
+#one .container:nth-child(3) .well{
+   background-color: #2e8b57;
+}
