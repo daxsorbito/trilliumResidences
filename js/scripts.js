@@ -5,7 +5,7 @@
   const setSceneTween = (tween, sceneOptions, label) => {
     new ScrollMagic.Scene(sceneOptions)
     .setTween(tween)
-    .addIndicators({name: label || sceneOptions.triggerElement || "first section"})
+    // .addIndicatorsname: label || sceneOptions.triggerElement || "first section"})
     .addTo(controller)
   }
 
