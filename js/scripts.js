@@ -27,6 +27,20 @@
       setSceneTween(TweenMax.from(`#${item}`, 1, {backgroundColor:"black"}), scene, `menu-${item}`);
     })
   }
+
+  const setScrollToTween = () => {
+    ["one", "two", "three", "four", "last"].forEach((item, index) => {
+      $(`#menu li:nth-child(${index+1}) > a`).click((e) => {
+        TweenMax.to(window, 1, {scrollTo: `#${item}`})
+        e.preventDefault();
+      })
+    })
+    $('.navbar-header > a').click((e) => {
+      TweenMax.to(window, 1, {scrollTo: '#first'})
+      e.preventDefault();
+    })
+  }
+
   // for div one trigger
   const sceneOneOptions = {triggerElement: "#one", duration: 200, offset: 0};
   const logoTween = TweenMax.to(".logo-container", 1, {color: "rgb(23, 184, 111)"});
@@ -38,6 +52,7 @@
   setSceneTween(logoTween, sceneOneOptions);
   setSceneTween(topNavBgTween, sceneOneOptions);
   setMenuTweens();
+  setScrollToTween();
 
   $('#four .container:nth-child(2) > .row').click(function () {
     $('#four iframe').css("pointer-events", "auto");
