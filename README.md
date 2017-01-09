@@ -1,5 +1,5 @@
 # Trillium Residences
-A ficticious static website
+A static website using GSAP and ScrollMagic
 
 ## How to run
 1. ```$ npm i -g browser-sync ```
