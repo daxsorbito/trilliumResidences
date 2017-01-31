@@ -519,3 +519,20 @@ ul.navbar-nav {
 .well > .row {
  margin-top: -15px;
 }
+
+#three > div:nth-child(2) > img {
+  padding: 10px;
+}
+
+.imageNav > a{
+  padding: 20px;
+  font-size: 20px;
+}
+
+.baseImglnk {
+   color: #17b86f;
+}
+
+.activeImglnk {
+  color: #d0ce43;
+}

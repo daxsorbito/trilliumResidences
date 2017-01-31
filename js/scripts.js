@@ -1,6 +1,9 @@
 ! function(t) {
   "use strict";
   const controller = new ScrollMagic.Controller();
+  const highlightColor = "#d0ce43";
+  const baseColor = "#17b86f";
+  const sections = ["one", "two", "three", "four","five", "six", "last"];
 
   const setSceneTween = (tween, sceneOptions, label) => {
     new ScrollMagic.Scene(sceneOptions)
@@ -19,8 +22,7 @@
   }
 
   const setMenuTweens = () => {
-    const highlightColor = "#d0ce43";
-    ["one", "two", "three", "four", "last"].forEach( (item, index) => {
+    sections.forEach( (item, index) => {
       const scene = {triggerElement: `#${item}`, duration: "300px"}
       setSceneTween(TweenMax.to(`#${item}  h2.text-primary`, 1, {fontSize: 45, color: highlightColor}), scene, `menu-${item}`);
       setSceneTween(setActiveMenuTween(index+1, highlightColor), scene, `menu-${item}`);
@@ -29,7 +31,7 @@
   }
 
   const setScrollToTween = () => {
-    ["one", "two", "three", "four", "last"].forEach((item, index) => {
+    sections.forEach((item, index) => {
       $(`#menu li:nth-child(${index+1}) > a`).click((e) => {
         TweenMax.to(window, 1, {scrollTo: `#${item}`})
         e.preventDefault();
@@ -43,7 +45,7 @@
 
   // for div one trigger
   const sceneOneOptions = {triggerElement: "#one", duration: 200, offset: 0};
-  const logoTween = TweenMax.to(".logo-container", 1, {color: "rgb(23, 184, 111)"});
+  const logoTween = TweenMax.to(".logo-container", 1, {color: baseColor });
   const topNavBgTween = TweenMax.to("#topNav", 1, {backgroundColor: "black"});
 
   // for div two trigger
@@ -54,11 +56,37 @@
   setMenuTweens();
   setScrollToTween();
 
-  $('#four .container:nth-child(2) > .row').click(function () {
-    $('#four iframe').css("pointer-events", "auto");
+  // for google maps
+  $('#six .container:nth-child(2) > .row').click(function () {
+    $('#six iframe').css("pointer-events", "auto");
   });
 
-  $('#four .container:nth-child(2) > .row').mouseleave(function() {
-    $('#four iframe').css("pointer-events", "none");
+  $('#six .container:nth-child(2) > .row').mouseleave(function() {
+    $('#six iframe').css("pointer-events", "none");
   });
+
+  const setPlanSection = (index) => {
+    [1,2,3].forEach(item => {
+      $(`#three > div:nth-child(2) > div > a:nth-child(${item})`).attr('class', 'baseImglnk')
+    })
+    $(`#three > div:nth-child(2) > div > a:nth-child(${index})`).attr('class', 'activeImglnk')
+    $('#three > div:nth-child(2) > img').attr('src', `../images/floor-plan/plan${index}.png`)
+  }
+  setPlanSection(1);
+  $('.imageNav > a').click(function(e) {
+    const aText = e.target.innerText;
+    let index = 1
+    if (aText.includes('5th-11th')) {
+      index = 2
+    } else if (aText.includes('12th-14th')) {
+      index = 3
+    }
+    setPlanSection(index)
+    e.preventDefault();
+  })
+
 }(jQuery);
+
+// function onSubmit (token) {
+//   document.getElementById("frmContact").submit();
+// }

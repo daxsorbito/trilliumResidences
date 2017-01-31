@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Welcome to Trillium Residences - you know you want it...</title>
@@ -11,6 +11,11 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      function onSubmit (token) {
+        document.getElementById("demo-form").submit();
+      }
+    </script>  
   </head>
   <body>
     <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
@@ -36,6 +41,12 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="#">Features &amp; Specifications</a>
+                    </li>
+                    <li>
+                      <a class="page-scroll" href="#">Floor Plan</a>
+                    </li>
+                    <li>
+                      <a class="page-scroll" href="#">Units</a>
                     </li>
                     <li>
                       <a class="page-scroll" href="#">Amenities &amp; Facilities</a>
@@ -221,7 +232,7 @@
         </div>
         <div class="col-lg-6 col-md-6 text-center">
             <div class="feature">
-              <h3>Specifications</h3>
+              <h2>Specifications</h2>
               <h4>TOTAL OF 128 RESIDENTIAL UNITS</h4>
               <div class="card">
                 <div class="card-block text-left">
@@ -243,6 +254,37 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
+            <h2 class="margin-top-0 text-primary">Floor Plan</h2>
+            <hr class="primary">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="imageNav text-center">
+            <a href="#" class="baseImglnk">4th floor</a>
+            <a href="#" class="baseImglnk">5th-11th floor</a>
+            <a href="#" class="baseImglnk">12th-14th floor</a>
+        </div>
+        <img class="img-responsive center-block" src="./images/floor-plan/plan1.png"/>
+      </div>
+    </section>
+    <section id="four">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="margin-top-0 text-primary">Units</h2>
+            <hr class="primary">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <p>Lorem Ipsum</p>
+      </div>
+    </section>
+    <section id="five">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
             <h2 class="margin-top-0 text-primary">Amenities &amp; Facilities</h2>
             <hr class="primary">
           </div>
@@ -252,7 +294,7 @@
         <p>Lorem Ipsum</p>
       </div>
     </section>
-    <section class="container-fluid" id="four">
+    <section class="container-fluid" id="six">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -278,7 +320,7 @@
                     <p>We love feedback. Fill out the form below and we'll get back to you as soon as possible.</p>
                 </div>
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <form class="contact-form row">
+                    <form class="contact-form row" id="frmContact">
                         <div class="col-md-4">
                             <label></label>
                             <input type="text" class="form-control" placeholder="Name">
@@ -297,7 +339,7 @@
                         </div>
                         <div class="col-md-4 col-md-offset-4">
                             <label></label>
-                            <button type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Send <i class="ion-android-arrow-forward"></i></button>
+                            <button type="button" data-toggle="modal" class="btn btn-primary btn-block btn-lg g-recaptcha" data-sitekey='6LcQiREUAAAAAKuxD8xs1hHWFy7AG3Z1Jh9XlNs2' data-callback="onSubmit">Send <i class="ion-android-arrow-forward"></i></button>
                         </div>
                     </form>
                 </div>
@@ -378,6 +420,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/plugins/ScrollToPlugin.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>  
+    <!-- <script src='https://www.google.com/recaptcha/api.js'></script> -->
     <script src="js/scripts.js"></script>
   </body>
 </html>
