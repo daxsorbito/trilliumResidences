@@ -65,15 +65,32 @@
     $('#six iframe').css("pointer-events", "none");
   });
 
-  const setPlanSection = (index) => {
+  const setSection = (parentClass, index) => {
     [1,2,3].forEach(item => {
-      $(`#three > div:nth-child(2) > div > a:nth-child(${item})`).attr('class', 'baseImglnk')
+      $(`#${parentClass} > div:nth-child(2) > div > a:nth-child(${item})`).attr('class', 'baseImglnk')
     })
-    $(`#three > div:nth-child(2) > div > a:nth-child(${index})`).attr('class', 'activeImglnk')
+    $(`#${parentClass} > div:nth-child(2) > div > a:nth-child(${index})`).attr('class', 'activeImglnk')
+  }
+
+  const setPlanSection = (index) => {
+    setSection('three', index)
     $('#three > div:nth-child(2) > img').attr('src', `../images/floor-plan/plan${index}.png`)
   }
+
+  const setUnitSection = (index) => {
+    console.log('entered ddd>>', index)
+    setSection('four', index);
+    [2,3,4].forEach(item => {
+      console.log(item)
+      console.log(`#four > div:nth-child(2) > div:nth-child(${item})`)
+      $(`#four > div:nth-child(2) > div:nth-child(${item})`).hide()
+    })
+    $(`#four > div:nth-child(2) > div:nth-child(${index+1})`).show()
+  }
+
   setPlanSection(1);
-  $('.imageNav > a').click(function(e) {
+  setUnitSection(1);
+  $('#three .imageNav > a').click(function(e) {
     const aText = e.target.innerText;
     let index = 1
     if (aText.includes('5th-11th')) {
@@ -85,6 +102,18 @@
     e.preventDefault();
   })
 
+  $('#four .imageNav > a').click(function(e) {
+    const aText = e.target.innerText;
+    let index = 1
+    if (aText.includes('Studio')) {
+      index = 2
+    } else if (aText.includes('Single')) {
+      index = 3
+    }
+    console.log('callings setUniSection')
+    setUnitSection(index)
+    e.preventDefault();
+  })
 }(jQuery);
 
 // function onSubmit (token) {
