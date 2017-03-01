@@ -3,7 +3,7 @@
   const controller = new ScrollMagic.Controller();
   const highlightColor = "#d0ce43";
   const baseColor = "#17b86f";
-  const sections = ["one", "two", "three", "four","five", "six", "last"];
+  const sections = ["one", "two", "three", "four","five", "six"];
 
   const setSceneTween = (tween, sceneOptions, label) => {
     new ScrollMagic.Scene(sceneOptions)
@@ -78,11 +78,8 @@
   }
 
   const setUnitSection = (index) => {
-    console.log('entered ddd>>', index)
     setSection('four', index);
     [2,3,4].forEach(item => {
-      console.log(item)
-      console.log(`#four > div:nth-child(2) > div:nth-child(${item})`)
       $(`#four > div:nth-child(2) > div:nth-child(${item})`).hide()
     })
     $(`#four > div:nth-child(2) > div:nth-child(${index+1})`).show()
@@ -114,8 +111,12 @@
     setUnitSection(index)
     e.preventDefault();
   })
+  
+  const myVar = setInterval(() => {
+    if ($('#formget_box').css('width') === '356px') {
+      $('#formget_box').width('356px')
+      console.log('clear')
+      clearInterval(myVar)
+    }
+  }, 500);
 }(jQuery);
-
-// function onSubmit (token) {
-//   document.getElementById("frmContact").submit();
-// }

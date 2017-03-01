@@ -142,6 +142,7 @@ footer {
 }
 .first-banner {
   float: right;
+  padding-right: 150px;
 }
 .TrillLogo {
   z-index: auto;
