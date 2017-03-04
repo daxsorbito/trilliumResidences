@@ -107,16 +107,21 @@
     } else if (aText.includes('Single')) {
       index = 3
     }
-    console.log('callings setUniSection')
     setUnitSection(index)
     e.preventDefault();
   })
   
   const myVar = setInterval(() => {
-    if ($('#formget_box').css('width') === '356px') {
-      $('#formget_box').width('356px')
-      console.log('clear')
+    let adjWidth; 
+    if ($(window).width() <= 600) {
+      adjWidth = 344
+    } else if ($('#formget_box').css('width') === '356px') {
+      adjWidth = 356
+    }
+    if (adjWidth) {
+      $('#formget_box').width(adjWidth)
       clearInterval(myVar)
     }
   }, 500);
+
 }(jQuery);
