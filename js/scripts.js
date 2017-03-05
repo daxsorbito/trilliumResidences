@@ -124,4 +124,32 @@
     }
   }, 500);
 
+  function preload(arrayOfImages) {
+      $(arrayOfImages).each(function(){
+          $('<img/>')[0].src = this;
+      });
+  }
+
+  preload([
+      '../images/amenities/amenities1.png',
+      '../images/amenities/amenities2.png',
+      '../images/amenities/amenities3.png',
+      '../images/amenities/amenities4.png',
+      '../images/amenities/amenities5.png',
+      '../images/amenities-facilities/arerialview.jpg',
+      '../images/amenities-facilities/outsidelobby.jpg',
+      '../images/amenities-facilities/roofdeck.jpg',
+      '../images/floor-plan/penthouse.png',
+      '../images/floor-plan/plan1.png',
+      '../images/floor-plan/plan2.png',
+      '../images/floor-plan/plan3.png',
+      '../images/floor-plan/single-bed.png',
+      '../images/floor-plan/single.png',
+      '../images/floor-plan/studio-bed.png',
+      '../images/floor-plan/studio.png',
+      '../images/trillium-bldg_small.png',
+      '../images/trillium-poster.png',
+      '../images/Trillogo_small.png'
+  ]);
+
 }(jQuery);
