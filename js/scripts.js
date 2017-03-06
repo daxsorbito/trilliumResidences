@@ -1,5 +1,34 @@
 ! function(t) {
   "use strict";
+  
+  const preload = (arrayOfImages) => {
+      $(arrayOfImages).each(() => {
+          $('<img/>')[0].src = this;
+      });
+  }
+  preload([
+      '../images/amenities/amenities1.png',
+      '../images/amenities/amenities2.png',
+      '../images/amenities/amenities3.png',
+      '../images/amenities/amenities4.png',
+      '../images/amenities/amenities5.png',
+      '../images/amenities-facilities/arerialview.jpg',
+      '../images/amenities-facilities/outsidelobby.jpg',
+      '../images/amenities-facilities/roofdeck.jpg',
+      '../images/floor-plan/penthouse.png',
+      '../images/floor-plan/plan1.png',
+      '../images/floor-plan/plan2.png',
+      '../images/floor-plan/plan3.png',
+      '../images/floor-plan/single-bed.png',
+      '../images/floor-plan/single.png',
+      '../images/floor-plan/studio-bed.png',
+      '../images/floor-plan/studio.png',
+      '../images/trillium-bldg_small.png',
+      '../images/trillium-poster.png',
+      '../images/Trillogo_small.png',
+      '../images/advantages/location.png'
+  ]);
+
   const controller = new ScrollMagic.Controller();
   const highlightColor = "#d0ce43";
   const baseColor = "#17b86f";
@@ -57,16 +86,16 @@
   setScrollToTween();
 
   // for google maps
-  $('#six .container:nth-child(2) > .row').click(function () {
+  $('#six .container:nth-child(4) > .row').click(function () {
     $('#six iframe').css("pointer-events", "auto");
   });
 
-  $('#six .container:nth-child(2) > .row').mouseleave(function() {
+  $('#six .container:nth-child(4) > .row').mouseleave(function() {
     $('#six iframe').css("pointer-events", "none");
   });
 
   const setSection = (parentClass, index) => {
-    [1,2,3].forEach(item => {
+    [1,2,3,4].forEach(item => {
       $(`#${parentClass} > div:nth-child(2) > div > a:nth-child(${item})`).attr('class', 'baseImglnk')
     })
     $(`#${parentClass} > div:nth-child(2) > div > a:nth-child(${index})`).attr('class', 'activeImglnk')
@@ -79,14 +108,21 @@
 
   const setUnitSection = (index) => {
     setSection('four', index);
-    [2,3,4].forEach(item => {
+    [2,3,4, 5].forEach(item => {
       $(`#four > div:nth-child(2) > div:nth-child(${item})`).hide()
     })
     $(`#four > div:nth-child(2) > div:nth-child(${index+1})`).show()
   }
+  
+  const setLocationSection = () => {
+    $('#six iframe').show()
+    $('#six img').hide()
+  }
 
-  setPlanSection(1);
-  setUnitSection(1);
+  setPlanSection(1)
+  setUnitSection(1)
+  setLocationSection()
+
   $('#three .imageNav > a').click(function(e) {
     const aText = e.target.innerText;
     let index = 1
@@ -106,12 +142,26 @@
       index = 2
     } else if (aText.includes('Single')) {
       index = 3
+    } else if (aText.includes('Two')) {
+      index = 4
     }
     setUnitSection(index)
     e.preventDefault();
   })
+
+  $('#six .imageNav > a').click(function(e) {
+    const aText = e.target.innerText;
+    $('#six iframe').toggle()
+    $('#six img').toggle()
+    if (aText.includes('simple')) {
+      $('#six .imageNav > a').text("Switch to google view")
+    } else if (aText.includes('google')) {
+      $('#six .imageNav > a').text("Switch to simple view")
+    }
+    e.preventDefault();
+  })
   
-  const myVar = setInterval(() => {
+  const myInterval = setInterval(() => {
     let adjWidth; 
     if ($(window).width() <= 600) {
       adjWidth = 344
@@ -120,36 +170,7 @@
     }
     if (adjWidth) {
       $('#formget_box').width(adjWidth)
-      clearInterval(myVar)
+      clearInterval(myInterval)
     }
   }, 500);
-
-  function preload(arrayOfImages) {
-      $(arrayOfImages).each(function(){
-          $('<img/>')[0].src = this;
-      });
-  }
-
-  preload([
-      '../images/amenities/amenities1.png',
-      '../images/amenities/amenities2.png',
-      '../images/amenities/amenities3.png',
-      '../images/amenities/amenities4.png',
-      '../images/amenities/amenities5.png',
-      '../images/amenities-facilities/arerialview.jpg',
-      '../images/amenities-facilities/outsidelobby.jpg',
-      '../images/amenities-facilities/roofdeck.jpg',
-      '../images/floor-plan/penthouse.png',
-      '../images/floor-plan/plan1.png',
-      '../images/floor-plan/plan2.png',
-      '../images/floor-plan/plan3.png',
-      '../images/floor-plan/single-bed.png',
-      '../images/floor-plan/single.png',
-      '../images/floor-plan/studio-bed.png',
-      '../images/floor-plan/studio.png',
-      '../images/trillium-bldg_small.png',
-      '../images/trillium-poster.png',
-      '../images/Trillogo_small.png'
-  ]);
-
 }(jQuery);

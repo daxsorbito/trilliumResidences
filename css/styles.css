@@ -542,7 +542,11 @@ ul.navbar-nav {
   color: #d0ce43;
 }
 
-.penthouse, .studio, .singleBed {
+.penthouse img {
+  width: 80%;
+}
+
+.penthouse, .studio, .singleBed, .twoBed {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -550,19 +554,19 @@ ul.navbar-nav {
   padding: 15px 25px;
 }
 
-.studio > div, .singleBed > div {
+.penthouse > div, .studio > div, .singleBed > div, .twoBed > div {
   display: flex;
   flex-direction: column;
 }
 
-.studio ul, .singleBed ul {
+.penthouse ul, .studio ul, .singleBed ul, .twoBed ul {
   padding-top: 50px;
   font-size: 18px;
   min-width: 440px;
   color: #17b86f;
 }
 
-.studio ul > li > span:nth-child(2), .singleBed ul > li > span:nth-child(2) {
+.penthouse ul > li > span:nth-child(2), .studio ul > li > span:nth-child(2), .singleBed ul > li > span:nth-child(2), .twoBed ul > li > span:nth-child(2) {
   color: #d0ce43;
   font-size: 25px;
   font-weight: 900;
@@ -581,4 +585,36 @@ ul.navbar-nav {
 #five > .container:nth-child(2) > div > div {
   width: 550px;
   font-size: 20px;
+}
+
+#six h3 {
+  font-size: 25px;
+}
+#six > .container.col-lg-12 .row:not(.col-lg-offset-2) {
+  padding: 30px 0;
+}
+#six .imageNav {
+  height: 50px;
+}
+#six .imageNav a{
+  font-size: 12px;
+}
+#six > .container.col-lg-12 .row > div:not(:nth-child(1)) {
+  text-align: center;
+  font-size: 20px;
+  line-height: 3.5em;
+  vertical-align: middle;
+}
+#six > .container.col-lg-12 .row > div:not(:nth-child(1)) span {
+  font-size: 25px;
+  color: #f8c4a1;
+}
+
+#six > .container.col-lg-12 .row > div:nth-child(2):not(.imageNav) {
+  font-size: 50px;
+  color: #f8c4a1;
+}
+
+#six > .container .row.col-lg-12 > div:nth-child(2) {
+  font-size: 40px;
 }
