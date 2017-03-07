@@ -2,7 +2,7 @@
   "use strict";
   
   const controller = new ScrollMagic.Controller();
-  const highlightColor = "#d0ce43";
+  const highlightColor = "#f6f437";
   const baseColor = "#17b86f";
   const sections = ["one", "two", "three", "four","five", "six"];
 

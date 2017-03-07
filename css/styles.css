@@ -29,7 +29,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #d0ce43;
+  color: #f6f437;
   outline: 0
 }
 h1,
@@ -447,20 +447,20 @@ fieldset[disabled] .btn-default.active {
 }
 ::-moz-selection {
   text-shadow: none;
-  color:#d0ce43;
+  color:#f6f437;
   background: #222
 }
 ::selection {
   text-shadow: none;
-  color: #d0ce43;
+  color: #f6f437;
   background: #222
 }
 img::selection {
-  color:#d0ce43;
+  color:#f6f437;
   background: 0
 }
 img::-moz-selection {
-  color:#d0ce43;
+  color:#f6f437;
   background: 0
 }
 video.faded {
@@ -539,7 +539,7 @@ ul.navbar-nav {
 }
 
 .activeImglnk {
-  color: #d0ce43;
+  color: #f6f437;
 }
 
 .penthouse img {
@@ -567,7 +567,7 @@ ul.navbar-nav {
 }
 
 .penthouse ul > li > span:nth-child(2), .studio ul > li > span:nth-child(2), .singleBed ul > li > span:nth-child(2), .twoBed ul > li > span:nth-child(2) {
-  color: #d0ce43;
+  color: #f6f437;
   font-size: 25px;
   font-weight: 900;
 }
@@ -589,6 +589,7 @@ ul.navbar-nav {
 
 #six h3 {
   font-size: 25px;
+  color: #17b86f;
 }
 #six > .container.col-lg-12 .row:not(.col-lg-offset-2) {
   padding: 30px 0;
@@ -598,6 +599,7 @@ ul.navbar-nav {
 }
 #six .imageNav a{
   font-size: 12px;
+  color: #f6f437;
 }
 #six > .container.col-lg-12 .row > div:not(:nth-child(1)) {
   text-align: center;
@@ -607,12 +609,12 @@ ul.navbar-nav {
 }
 #six > .container.col-lg-12 .row > div:not(:nth-child(1)) span {
   font-size: 25px;
-  color: #f8c4a1;
+  color: #98c750;
 }
 
 #six > .container.col-lg-12 .row > div:nth-child(2):not(.imageNav) {
   font-size: 50px;
-  color: #f8c4a1;
+  color: #98c750;
 }
 
 #six > .container .row.col-lg-12 > div:nth-child(2) {
@@ -621,7 +623,6 @@ ul.navbar-nav {
 
 .modal-dialog {
   width: 925px;
-
   height: 90%;
 }
 
@@ -630,7 +631,7 @@ ul.navbar-nav {
   height: 500px;
 }
 .modal-body h2 {
-  color: #d0ce43;
+  color: #f6f437;
 }
 .modal-body > div {
   height: 800px;
