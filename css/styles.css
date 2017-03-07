@@ -618,3 +618,49 @@ ul.navbar-nav {
 #six > .container .row.col-lg-12 > div:nth-child(2) {
   font-size: 40px;
 }
+
+.modal-dialog {
+  width: 925px;
+
+  height: 90%;
+}
+
+.modal-dialog embed {
+  width: 98%;
+  height: 500px;
+}
+.modal-body h2 {
+  color: #d0ce43;
+}
+.modal-body > div {
+  height: 800px;
+  overflow: scroll;
+  padding-bottom: 10px;
+}
+
+#price-list p {margin: 0; padding: 0;}	
+#price-list .ft00{font-size:14px;font-family:Times;color:#000000;}
+#price-list .ft01{font-size:13px;font-family:Times;color:#000000;}
+#price-list .ft02{font-size:8px;font-family:Times;color:#000000;}
+#price-list .ft03{font-size:10px;font-family:Times;color:#000000;}
+#price-list .ft04{font-size:16px;font-family:Times;color:#000000;}
+#price-list .ft05{font-size:14px;line-height:16px;font-family:Times;color:#000000;}
+
+#payment-studio p {margin: 0; padding: 0;}	
+#payment-studio .ft00{font-size:14px;font-family:Times;color:#000000;}
+#payment-studio .ft01{font-size:11px;font-family:Times;color:#000000;}
+#payment-studio .ft02{font-size:11px;font-family:Times;color:#ff0000;}
+#payment-studio .ft03{font-size:9px;font-family:Times;color:#000000;}
+#payment-studio .ft04{font-size:13px;font-family:Times;color:#000000;}
+#payment-studio .ft05{font-size:19px;font-family:Times;color:#000000;}
+#payment-studio .ft06{font-size:12px;line-height:14px;font-family:Times;color:#000000;}
+
+#payment-two-bedroom p {margin: 0; padding: 0;}	
+#payment-two-bedroom .ft00{font-size:14px;font-family:Times;color:#000000;}
+#payment-two-bedroom .ft01{font-size:10px;font-family:Times;color:#000000;}
+#payment-two-bedroom .ft02{font-size:10px;font-family:Times;color:#ff0000;}
+#payment-two-bedroom .ft03{font-size:8px;font-family:Times;color:#000000;}
+#payment-two-bedroom .ft04{font-size:12px;font-family:Times;color:#000000;}
+#payment-two-bedroom .ft05{font-size:18px;font-family:Times;color:#000000;}
+#payment-two-bedroom .ft06{font-size:12px;line-height:13px;font-family:Times;color:#000000;}
+#payment-two-bedroom .ft07{font-size:8px;line-height:14px;font-family:Times;color:#000000;}
