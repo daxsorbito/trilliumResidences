@@ -1,6 +1,6 @@
 ! function(t) {
   "use strict";
-  
+
   const controller = new ScrollMagic.Controller();
   const highlightColor = "#f6f437";
   const baseColor = "#17b86f";
@@ -75,7 +75,11 @@
 
   const setPlanSection = (index) => {
     setSection('three', index)
-    $('#three > div:nth-child(2) > img').attr('src', `../images/floor-plan/plan${index}.png`)
+    const img = $('#three > div:nth-child(2) > img')
+      img.fadeOut('fast', () => {
+          img.attr('src', `../images/floor-plan/plan${index}.png`)
+          img.fadeIn('fast')
+      })
   }
 
   const setUnitSection = (index) => {
@@ -85,7 +89,7 @@
     })
     $(`#four > div:nth-child(2) > div:nth-child(${index+1})`).show()
   }
-  
+
   const setLocationSection = () => {
     $('#six iframe').show()
     $('#six img').hide()
@@ -132,9 +136,9 @@
     }
     e.preventDefault();
   })
-  
+
   const myInterval = setInterval(() => {
-    let adjWidth; 
+    let adjWidth;
     if ($(window).width() <= 600) {
       adjWidth = 344
     } else if ($('#formget_box').css('width') === '356px') {
